@@ -126,7 +126,9 @@ async def joker_handler(message: Message, state: FSMContext, bot: Bot) -> None:
         else:
             await state.set_state(Form.video)
             await message.answer("Всё верно, Елена шучу глазами Михална")
-            await message.answer_video(video=FSInputFile("video.mp4"))
+            await message.answer_video(
+                video=FSInputFile("video.mp4"), width=720, height=1180
+            )
             await message.answer(
                 "Для Знакомства со следующей личностью нужно выполнить задание:\nВышли секретное видео об одном из своих попутчиков."
             )
@@ -267,6 +269,7 @@ messages2 = [
     "А чем отличается ваш Roblox?",
     "Можно записаться на мастер-класс?",
     "Нам бы отработку поставить.",
+    "Мама Веры Киселевой звонила, спрашивала работает еще Елена в нашей школе или нет. Почему она не отвечает на сообщения",
     "Елена, мы пропустим урок, мы улетаем в Дубаи",
     "Можно онлайн подключиться?",
     "Мы бы хотели поменять преподавателя.",
